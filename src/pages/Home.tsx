@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   FaTruck,
   FaHeadset,
@@ -65,13 +66,13 @@ return (
   </p>
 
   <div className="flex gap-4 flex-wrap justify-center">
-    <button className="bg-white text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition">
+    <Link to="/login" className="bg-white text-black font-semibold px-6 py-2 rounded-md hover:bg-gray-100 transition">
       Shop Now
-    </button>
-    <button className="border border-white text-white px-6 py-2 rounded-md hover:bg-gradient-to-r
+    </Link>
+    <Link to="/login" className="border border-white text-white px-6 py-2 rounded-md hover:bg-gradient-to-r
       hover:from-purple-500 hover:via-yellow-400 hover:to-blue-500 hover:text-black transition">
       Sign Up
-    </button>
+    </Link>
   </div>
 
   {/* Click Dots */}
@@ -269,10 +270,10 @@ return (
       className="w-full h-auto max-h-[26rem] sm:h-80 md:h-96 object-cover"
     />
     <div className="absolute inset-0 flex items-end justify-center pb-8">
-      <button className="bg-white/40 backdrop-blur-sm text-gray-900 px-16 py-1 rounded-full font-medium
+      <Link to="/login" className="bg-white/40 backdrop-blur-sm text-gray-900 px-16 py-1 rounded-full font-medium
         tracking-widest hover:bg-white/80 transition-all duration-300">
         Girls
-      </button>
+      </Link>
     </div>
   </div>
   {/* Mens Card */}
@@ -284,10 +285,10 @@ return (
       className="w-full h-auto max-h-[26rem] sm:h-80 md:h-96 object-cover"
     />
     <div className="absolute inset-0 flex items-end justify-center pb-8">
-      <button className="bg-white/40 backdrop-blur-sm text-gray-900 px-16 py-1 rounded-full font-medium
+      <Link to="/login" className="bg-white/40 backdrop-blur-sm text-gray-900 px-16 py-1 rounded-full font-medium
         tracking-widest hover:bg-white/80 transition-all duration-300">
         Men
-      </button>
+      </Link>
     </div>
   </div>
   {/* Womens Card */}
@@ -299,10 +300,10 @@ return (
       className="w-full h-auto max-h-[26rem] sm:h-80 md:h-96 object-cover"
     />
     <div className="absolute inset-0 flex items-end justify-center pb-8">
-      <button className="bg-white/40 backdrop-blur-sm text-gray-900 px-16 py-1 rounded-full font-medium
+      <Link to="/login" className="bg-white/40 backdrop-blur-sm text-gray-900 px-16 py-1 rounded-full font-medium
         tracking-widest hover:bg-white/80 transition-all duration-300">
         Women
-      </button>
+      </Link>
     </div>
   </div>
   {/* Boys Card */}
@@ -314,10 +315,10 @@ return (
       className="w-full h-auto max-h-[26rem] sm:h-80 md:h-96 object-cover"
     />
     <div className="absolute inset-0 flex items-end justify-center pb-8">
-      <button className="bg-white/40 backdrop-blur-sm text-gray-900 px-16 py-1 rounded-full font-medium
+      <Link to="/login" className="bg-white/40 backdrop-blur-sm text-gray-900 px-16 py-1 rounded-full font-medium
         tracking-widest hover:bg-white/80 transition-all duration-300">
         Boys
-      </button>
+      </Link>
     </div>
   </div>
 </div>
@@ -360,9 +361,9 @@ return (
     </div>
 
     <div className="flex flex-wrap gap-4 mt-6">
-      <button className="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition">
+      <Link to="/login" className="bg-blue-600 text-white px-6 py-2 rounded-md font-medium hover:bg-blue-700 transition">
         Shop Now
-      </button>
+      </Link>
 
       <button
         onClick={() => setExpanded(!expanded)}
@@ -473,10 +474,10 @@ return (
 </div>
   {/* See More Button below the grid */}
   <div className="flex justify-center mt-8">
-    <button className="bg-blue-600 text-white px-8 py-2 rounded-md font-medium flex items-center gap-2 hover:bg-blue-700 transition group">
+    <Link to="/login" className="bg-blue-600 text-white px-8 py-2 rounded-md font-medium flex items-center gap-2 hover:bg-blue-700 transition group">
       See More
       <FaExternalLinkAlt className="transition-transform duration-300 group-hover:translate-x-1" />
-    </button>
+    </Link>
   </div>
 </section>
 
@@ -523,11 +524,11 @@ return (
           {/* Vertical line */}
           <span className="block w-[2px] h-12 bg-white shrink-0 mt-1" />
         </div>
-        <a href="/login" className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm px-4 py-1.5 rounded-full
+        <Link to="/login" className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm px-4 py-1.5 rounded-full
           text-sm font-medium text-gray-900 transition-all duration-300 hover:bg-white/70 hover:pl-5">
             Explore
           <FaExternalLinkAlt className="text-xs transition-transform duration-300 group-hover:translate-x-1"/>
-        </a>
+        </Link>
       </div>
     </motion.div>
 
@@ -555,11 +556,11 @@ return (
         {/* Vertical line */}
         <span className="block w-[2px] h-12 bg-white shrink-0 mt-1" />
       </div>
-      <a href="/login" className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm px-4 py-1.5 rounded-full
+      <Link to="/login" className="inline-flex items-center gap-2 bg-white/40 backdrop-blur-sm px-4 py-1.5 rounded-full
         text-sm font-medium text-gray-900 transition-all duration-300 hover:bg-white/70 hover:pl-5">
         Explore
         <FaExternalLinkAlt className="text-xs transition-transform duration-300 group-hover:translate-x-1"/>
-      </a>
+      </Link>
     </div>
     </motion.div>
   </div>

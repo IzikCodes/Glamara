@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { Menu, X, User, Heart, ShoppingCart, Search, ArrowUp, MessageCircle } from "lucide-react";
 
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import Loader from "./components/Loader";
 import Footer from "./components/Footer";
 
@@ -58,10 +60,10 @@ const App = () => {
       </header>
 
       {/* MAIN HEADER */}
-      <header className="bg-white shadow-sm">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between w-full">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+          <Link to="/home" className="flex items-center gap-2 flex-shrink-0">
             <img
               src="/images/glamara.png"
               alt="GLAMARA"
@@ -74,12 +76,11 @@ const App = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 font-medium text-gray-700">
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            <Link to="/home"
               className="transition-colors duration-200 hover:text-blue-600"
             >
               Home
-            </button>
+            </Link>
 
             <a
               href="#shop"
@@ -143,15 +144,11 @@ const App = () => {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <nav className="flex flex-col gap-4 px-6 py-6 font-medium text-gray-700">
-              <button
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                  setMobileMenuOpen(false);
-                }}
+              <Link to="/home"
                 className="text-left transition-colors duration-200 hover:text-blue-600"
               >
                 Home
-              </button>
+              </Link>
 
               <a
                 href="#shop"
@@ -196,7 +193,9 @@ const App = () => {
       {/* ROUTES */}
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Navigate to="/home" replace />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       

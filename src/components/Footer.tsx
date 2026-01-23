@@ -18,7 +18,7 @@ const Footer = () => {
 
         {/* LEFT — Brand + About + Contact Form */}
         <div className="flex flex-col gap-6">
-          <Link to="/" className="flex items-center gap-2 flex-shrink-0">
+          <Link to="/home" className="flex items-center gap-2 flex-shrink-0">
             <img
               src="/images/glamara.png"
               alt="GLAMARA"
@@ -68,12 +68,11 @@ const Footer = () => {
 
           <ul className="space-y-2 text-sm text-gray-700">
             <li>
-              <button
-                onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              <Link to="/home"
                 className="transition-colors duration-200 hover:text-blue-600"
               >
                 Home
-              </button>
+              </Link>
             </li>
             <li>        
               <a
