@@ -5,6 +5,7 @@ import { Menu, X, User, Heart, ShoppingCart, Search, ArrowUp, MessageCircle } fr
 
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import Loader from "./components/Loader";
 import Footer from "./components/Footer";
 
@@ -34,6 +35,7 @@ const App = () => {
   const openWhatsApp = () => {
     window.open("https://wa.me/2348075005248", "_blank");
   };
+  const [searchOpen, setSearchOpen] = useState(false);
 
   if (loading) return <Loader />;
 
@@ -60,7 +62,7 @@ const App = () => {
       </header>
 
       {/* MAIN HEADER */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-md">
+      <header className="sticky top-0 z-50 bg-white shadow-md md:bg-white/90 md:backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between w-full">
           {/* Logo */}
           <Link to="/home" className="flex items-center gap-2 flex-shrink-0">
@@ -111,7 +113,10 @@ const App = () => {
 
           {/* Right Icons */}
           <div className="flex items-center gap-3 sm:gap-5 flex-shrink-0 text-gray-700">
-            <button className="transition-all duration-200 hover:text-blue-600 hover:scale-110">
+            <button
+              onClick={() => setSearchOpen(!searchOpen)}
+              className="transition-all duration-200 hover:text-blue-600 hover:scale-110"
+            >
               <Search size={20} />
             </button>
             <button className="transition-all duration-200 hover:text-blue-600 hover:scale-110">
@@ -189,6 +194,17 @@ const App = () => {
           </div>
         )}
       </header>
+      {searchOpen && (
+      <div className="bg-white border-t shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 py-3">
+          <input
+            type="text"
+            placeholder="What are you looking for today?"
+            className="w-full rounded-full border border-gray-300 px-5 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+      </div>
+      )}
 
       {/* ROUTES */}
       <main className="flex-grow">
@@ -196,6 +212,7 @@ const App = () => {
           <Route path="/" element={<Navigate to="/home" replace />} />
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </main>
       

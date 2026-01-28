@@ -98,6 +98,12 @@ const Footer = () => {
                 Services
               </a>
             </li>
+            <li>
+              <Link to="/login" className="inline-block px-3 py-1 rounded border border-blue-600 text-blue-600 font-medium 
+                  transition-all duration-300 hover:bg-blue-600 hover:text-white hover:shadow-md" >
+                  Sign Up
+              </Link>
+            </li>
           </ul>
         </div>
 
